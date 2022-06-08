@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="EHR.Views.SplashView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EHR.Views"
+             xmlns:viewModels="clr-namespace:EHR.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Grid Background="Blue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition MaxWidth="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition MaxHeight="200" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1" Background="Black" MaxHeight="300px" MaxWidth="400px" MinHeight="150" MinWidth="200">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1">
+            <Label Content="Username" HorizontalAlignment="Left" Foreground="White"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Stretch"  Text="{Binding Username}" TextWrapping="Wrap" VerticalAlignment="Top" />
+            <Label Content="Password"  HorizontalAlignment="Left" Foreground="White"/>
+            <TextBox x:Name="textBox2" HorizontalAlignment="Stretch"  Text="{Binding Password}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Label Content="{Binding ErrorMessage}" Foreground="#FFFF0303"></Label>
+            <Button x:Name="button" Content="Login" Margin="0,10,0,0" Command="{Binding GoToMain}"  VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>
